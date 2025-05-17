@@ -1,0 +1,16 @@
+# ROS2 build artifacts
+ros2/build/
+ros2/install/
+ros2/log/
+
+# Python bytecode
+**/__pycache__/
+**/*.py[cod]
+
+# IDE / Editor settings
+.vscode/
+.idea/
+
+# OS temp files
+*.swp
+.DS_Store

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="zeuscar">
+
+  <!-- 
+    1) マクロ定義: フレームの固定ジョイントを生成 
+    2) paramsに "yaw" が無かったので追加
+  -->
+  <xacro:macro name="add_lidar" params="parent_link child_link x y z roll pitch yaw">
+    <joint name="${child_link}_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${child_link}"/>
+      <origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- ベースリンク -->
+  <link name="base_link"/>
+
+  <!-- LiDAR用リンク 
+       LiDARドライバがデフォルトで 'laser' を使用している場合は、
+       ここを 'laser' にして合わせると良い -->
+  <link name="laser"/>
+
+  <!-- 
+    マクロ呼び出し: 
+    親リンク=base_link, 子リンク=laser, 取り付け位置は適宜調整
+    最後に '/>' を付けてタグを閉じる
+  -->
+  <xacro:add_lidar
+    parent_link="base_link"
+    child_link="laser"
+    x="-0.017"
+    y="0.0165"
+    z="0.21"
+    roll="0"
+    pitch="0"
+    yaw="0"
+  />
+
+</robot>
+
+
