@@ -26,7 +26,7 @@ zeuscar-project/
 - **Connection**: Communicates over the same LAN network
 
 ### Raspberry Pi 4
-- **Model**: Raspberry Pi 4B (or 5)
+- **Model**: Raspberry Pi 4B
 - **OS**: Ubuntu Server 22.04
 - **Role**: Run the ROS 2 Subscriber node to receive commands and forward them via serial to the Arduino
 - **Connection**: LAN connection to the host PC; powered by SunFounder PiPower
