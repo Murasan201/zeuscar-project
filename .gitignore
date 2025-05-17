@@ -14,3 +14,8 @@ ros2/log/
 # OS temp files
 *.swp
 .DS_Store
+
+# PC-side ROS2 workspace artifacts
+pc_control/build/
+pc_control/install/
+pc_control/log/
